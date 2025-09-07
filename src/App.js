@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import Banner from "./components/Banner";
+import About from "./components/About";
+import JobExperience from "./components/JobExperience";
+import Activities from "./components/Activities";
+import ActivityModal from "./components/ActivityModal";
+import Footer from "./components/Footer";
+import Nav from "./components/Nav";
+
+export default function App() {
+  const [selectedActivity, setSelectedActivity] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+      <Nav/>
+      <Banner />
+      <About />
+      <JobExperience />
+      <Activities onSelect={setSelectedActivity} />
+      {selectedActivity && (
+        <ActivityModal
+          activity={selectedActivity}
+          onClose={() => setSelectedActivity(null)}
+        />
+      )}
+      <Footer />
     </div>
   );
 }
 
-export default App;
