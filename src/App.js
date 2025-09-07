@@ -8,6 +8,7 @@ import Activities from "./components/Activities";
 import ActivityModal from "./components/ActivityModal";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
+import Skills from "./components/Skills";
 
 export default function App() {
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -17,6 +18,7 @@ export default function App() {
       <Nav/>
       <Banner />
       <About />
+      <Skills />
       <JobExperience />
       <Activities onSelect={setSelectedActivity} />
       {selectedActivity && (
