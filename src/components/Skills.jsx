@@ -7,7 +7,7 @@ export default function Skills() {
       <h2 className="text-3xl font-bold text-primary-pink mb-8 text-center">Core Skills</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Requirement Gathering & Analysis */}
-        <div className="bg-black rounded-xl shadow p-6 flex items-start gap-4">
+  <div className="bg-black rounded-xl shadow p-6 flex items-start gap-4">
           <FileText className="w-8 h-8 text-primary-pink mt-1" />
           <div>
             <h3 className="text-lg font-semibold text-primary-pink mb-1">Requirement Gathering & Analysis</h3>
