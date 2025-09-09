@@ -18,7 +18,6 @@ export default function ActivityModal ({ activity, onClose }){
   return (
     <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 w-4/5 h-4/5 relative overflow-y-auto">
-        {/* Close Button */}
         <button
           className="absolute top-3 right-3 text-gray-600 hover:text-black text-xl"
           onClick={onClose}
@@ -26,10 +25,8 @@ export default function ActivityModal ({ activity, onClose }){
           ✖
         </button>
 
-        {/* Title */}
         <h3 className="text-2xl font-bold mb-4">{activity.title}</h3>
 
-        {/* Carousel */}
         <div className="relative mb-4">
           <img
             src={activity.images[currentImage]}
@@ -54,7 +51,6 @@ export default function ActivityModal ({ activity, onClose }){
           )}
         </div>
 
-        {/* Long Description */}
         <p className="text-gray-700 mb-4">{activity.longDesc}</p>
         {activity.ref && (
           <a

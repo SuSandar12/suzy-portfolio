@@ -52,7 +52,7 @@ export default function Activities() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="p-10 bg-gray-50">
+    <section id="activities" className="p-10 bg-gray-50">
       <h2 className="text-3xl font-bold mb-8 text-center text-primary-pink">Activities</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {activities.map((activity) => (
