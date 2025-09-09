@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/suzy-portfolio/static/css/main.03da80d4.css",
+    "main.js": "/suzy-portfolio/static/js/main.232a6b89.js",
+    "static/js/453.8a46587e.chunk.js": "/suzy-portfolio/static/js/453.8a46587e.chunk.js",
+    "static/media/profile.jpg": "/suzy-portfolio/static/media/profile.30d91957547826078ca8.jpg",
+    "index.html": "/suzy-portfolio/index.html",
+    "main.03da80d4.css.map": "/suzy-portfolio/static/css/main.03da80d4.css.map",
+    "main.232a6b89.js.map": "/suzy-portfolio/static/js/main.232a6b89.js.map",
+    "453.8a46587e.chunk.js.map": "/suzy-portfolio/static/js/453.8a46587e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.03da80d4.css",
+    "static/js/main.232a6b89.js"
+  ]
+}
