@@ -18,9 +18,7 @@ export default function Nav() {
           <li>
             <a href="#activities" className="text-gray-700 hover:text-pink-600 font-medium">Activities</a>
           </li>
-          <li>
-            <a href="#contact" className="text-gray-700 hover:text-pink-600 font-medium">Contact</a>
-          </li>
+         
         </ul>
       </div>
     </nav>

@@ -55,7 +55,17 @@ export default function ActivityModal ({ activity, onClose }){
         </div>
 
         {/* Long Description */}
-        <p className="text-gray-700">{activity.longDesc}</p>
+        <p className="text-gray-700 mb-4">{activity.longDesc}</p>
+        {activity.ref && (
+          <a
+            href={activity.ref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 text-primary-pink underline hover:text-primary-pink transition"
+          >
+            Reference Link
+          </a>
+        )}
       </div>
     </div>
   );

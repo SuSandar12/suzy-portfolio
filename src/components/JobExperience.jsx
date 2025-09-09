@@ -1,16 +1,11 @@
-import React, { useState } from "react";
-
-import bacha1 from "../assets/profile.jpg";
-import twg1 from "../assets/profile.jpg";
-import dw1 from "../assets/profile.jpg";
-import acro1 from "../assets/profile.jpg";
+import React from "react";
 
 const jobs = [
   {
     title: "Application Developer",
     company: "Bacha Coffee, Singapore",
     period: "May 2024 – Present (on-site)",
-    images: [bacha1],
+    link: "https://www.bachacoffee.com/",
     bullets: [
       "Developed and maintained an internal Business Portal using ASP.NET and C#, with user-friendly interfaces and real-time data integration from ERP systems.",
       "Customized and extended Microsoft Business Central (MSBC) functionalities using AL Language, streamlining finance and warehouse operations.",
@@ -22,12 +17,16 @@ const jobs = [
       "Negotiated with vendors to evaluate and procedure decisions.",
       "Picked up new analysis skills to assess business needs and technical feasibility when adopting new tools.",
     ],
+    projects: [
+      "Internal Business Portal: Developed an internal portal integrating finance and warehouse data with MSBC, improving operational efficiency.",
+      "Component-Level Improvements: Enhanced UI/UX and backend modules for better performance and maintainability.",
+    ],
   },
   {
     title: "E-Commerce Developer",
     company: "TWG Tea, Singapore",
     period: "Dec 2021 – Mar 2024 (Remote, Contract)",
-    images: [twg1],
+    link: "https://www.twgtea.com/",
     bullets: [
       "Site Performance Monitoring & Customization: Responsible for monitoring site performance and developing customized modules tailored to meet diverse business needs.",
       "System Integrations: Successfully integrated various third-party systems, including APIs, to enhance the functionality of the e-commerce platform.",
@@ -36,19 +35,19 @@ const jobs = [
       "Cross-Functional Collaboration: Collaborate closely with cross-functional teams to gather business requirements and deliver solutions that align with company goals.",
     ],
     projects: [
-      "Shipment Creation System Integration with DHL API: Designed and implemented a shipment creation system that integrates with the DHL shipping API, automating the shipping process and improving order fulfillment.",
-      "Parcel Shipping Order Entry System: Developed a parcel shipping order entry system using C# and Razor, enabling streamlined and accurate order management.",
-      "Export Sales Order Data System: Created an automated system for exporting sales order data, improving data management and reporting processes.",
-      "API Integrations: Successfully integrated various external APIs, enhancing system capabilities and enabling smoother data exchange between platforms.",
-      "Sales Data Import System: Developed a Windows Form Application and Console Application in C# to automate the import of sales data from e-commerce websites into the respective databases, scheduled to run daily and monthly via Windows Task Scheduler.",
-      "Static Web Pages & JSON-Powered Webpage Project: Developed static web pages and a JSON-powered webpage project using React.js, improving website interactivity and data handling.",
+      "Shipment Creation System Integration with DHL API: Automated shipping using DHL API.",
+      "Parcel Shipping Order Entry System: Developed with C# and Razor.",
+      "Export Sales Order Data System: Automated sales data export for reporting.",
+      "API Integrations: Integrated multiple external APIs for smoother data exchange.",
+      "Sales Data Import System: Automated imports using Windows Forms and Console apps.",
+      "Static Web Pages & JSON-Powered Webpage Project: Improved website interactivity using React.js.",
     ],
   },
   {
     title: "Web Developer",
     company: "DynamicWeb APAC, Yangon",
     period: "Oct 2018 – Oct 2021",
-    images: [dw1],
+    link: "https://dynamicweb.com/",
     bullets: [
       "Collaborated with both local and international colleagues, including teams from Myanmar, on various e-commerce projects.",
       "Successfully developed multiple e-commerce platforms using the Dynamic Web Ecommerce Engine, ensuring integration with payment providers (2C2P) and shipping providers (Marathon, Ninja Van).",
@@ -57,67 +56,63 @@ const jobs = [
       "Coordinated cross-functional activities, including integration, API development, business logic implementation, and frontend design, while contributing to all stages of the software development lifecycle.",
     ],
     projects: [
-      "Pet Lovers Centre (www.petloverscentre.com): Developed and maintained the site using C#, ASP.NET, Razor, and frontend technologies (HTML, CSS, JS). Ensured optimal site performance, functionality, and user experience through continuous enhancements and monitoring.",
-      "Commune Life (thecommunelife.com): Worked as the main developer, focusing on API development, business logic, and frontend design. Enhanced system performance and ensured seamless integration between backend and frontend components.",
-      "Lasource Group Myanmar (lasource.com.mm): Led the integration of payment providers and shipping providers to streamline the checkout process. Developed various sales report systems for the sellers, improving data management and decision-making.",
-      "LPG Gas Singapore Delivery & Sales Management System: Developed an internal delivery and sales management system.",
+      "Pet Lovers Centre (www.petloverscentre.com): Maintained site using C#, ASP.NET, Razor, HTML, CSS, JS.",
+      "Commune Life (thecommunelife.com): Main developer for API, business logic, frontend.",
+      "Lasource Group Myanmar (lasource.com.mm): Integrated payment & shipping providers, built sales report systems.",
+      "LPG Gas Singapore Delivery & Sales Management System: Internal delivery & sales system.",
     ],
   },
   {
     title: "Intern – Java Developer",
     company: "Acroquest Myanmar",
     period: "May 2018 – Jul 2018",
-    images: [acro1],
+    link: "https://www.acroquest.co.jp/en/",
     bullets: [
-      "JUnit Testing & Automated Testing: Created and maintained JUnit test cases to verify software functionality and reliability. Conducted thorough testing using automated tools to identify bugs, streamline the testing process, and enhance system performance.",
+      "JUnit Testing & Automated Testing: Created and maintained JUnit test cases to verify software functionality and reliability.",
       "Server-Side Development: Developed and supported server-side functions using Java and the Spring Framework to ensure robust, scalable, and efficient software.",
       "Learned about Japanese work culture, team collaboration, and quality-focused development practices.",
+    ],
+    projects: [
+      "Server-Side Functions: Developed server-side functions using Java & Spring.",
+      "Automated Testing: Created JUnit test cases for verification and reliability.",
     ],
   },
 ];
 
-function Carousel({ images }) {
-  const [current, setCurrent] = useState(0);
-  if (!images || images.length === 0) return null;
-  return (
-    <div className="relative w-full h-56 md:h-64 flex items-center justify-center">
-      <img src={images[current]} alt="job" className="w-full h-full object-cover rounded-xl" />
-      {images.length > 1 && (
-        <>
-          <button onClick={() => setCurrent((current - 1 + images.length) % images.length)} className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/60 text-white px-2 py-1 rounded-full">&#8249;</button>
-          <button onClick={() => setCurrent((current + 1) % images.length)} className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/60 text-white px-2 py-1 rounded-full">&#8250;</button>
-        </>
-      )}
-    </div>
-  );
-}
-
 export default function JobExperience() {
   return (
+    
     <section id="experiences" className="max-w-6xl mx-auto py-12 px-4">
-      <h2 className="text-center text-3xl font-bold mb-8 text-primary-pink">Professional Experience</h2>
-      <div className="space-y-16">
+      <h2 className="text-center text-3xl font-bold mb-8 text-primary-pink">
+        Professional Experience
+      </h2>
+      <div className="relative border-l-4 border-primary-pink pl-8 space-y-12">
         {jobs.map((job, idx) => (
-          <div key={job.title} className={`flex flex-col md:flex-row ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center gap-8`}>
-            {/* Carousel */}
-            <div className="md:w-1/2 w-full">
-              <Carousel images={job.images} />
-            </div>
-            {/* Text */}
-            <div className="md:w-1/2 w-full">
-              <h3 className="text-2xl font-semibold text-pink-400">{job.title}</h3>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center text-gray-400 text-sm mb-2">
-                <span>{job.company}</span>
-                <span>{job.period}</span>
+          <div key={idx} className="relative">
+            <div className="absolute -left-3 top-2 w-6 h-6 rounded-full bg-primary-pink"></div>
+
+            <div className="bg-white shadow-md rounded-lg p-6">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                <h3 className="text-2xl font-semibold text-primary-pink">{job.title}</h3>
+                <span className="text-gray-500 text-sm font-bold">{job.period}</span>
               </div>
-              <ul className="list-disc pl-6 text-gray-200 space-y-1">
-                {job.bullets.map((b, i) => <li key={i}>{b}</li>)}
+              <h4 className="text-gray-700 font-medium mb-3">
+                <a href={job.link} className="hover:text-primary-pink underline" target="_blank" rel="noopener noreferrer">
+                  {job.company}
+                </a>
+              </h4>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                {job.bullets.map((b, i) => (
+                  <li key={i}>{b}</li>
+                ))}
               </ul>
               {job.projects && (
                 <>
                   <div className="mt-2 text-gray-300 font-semibold">Key Projects:</div>
                   <ul className="list-disc pl-8 text-gray-200 space-y-1">
-                    {job.projects.map((p, i) => <li key={i}>{p}</li>)}
+                    {job.projects.map((p, i) => (
+                      <li key={i}>{p}</li>
+                    ))}
                   </ul>
                 </>
               )}
