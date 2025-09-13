@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/suzy-portfolio/static/css/main.03da80d4.css",
-    "main.js": "/suzy-portfolio/static/js/main.f339b6e6.js",
+    "main.css": "/suzy-portfolio/static/css/main.4fc66ba8.css",
+    "main.js": "/suzy-portfolio/static/js/main.87cb7f0d.js",
     "static/js/453.8a46587e.chunk.js": "/suzy-portfolio/static/js/453.8a46587e.chunk.js",
     "static/media/profile.jpg": "/suzy-portfolio/static/media/profile.30d91957547826078ca8.jpg",
     "index.html": "/suzy-portfolio/index.html",
-    "main.03da80d4.css.map": "/suzy-portfolio/static/css/main.03da80d4.css.map",
-    "main.f339b6e6.js.map": "/suzy-portfolio/static/js/main.f339b6e6.js.map",
+    "main.4fc66ba8.css.map": "/suzy-portfolio/static/css/main.4fc66ba8.css.map",
+    "main.87cb7f0d.js.map": "/suzy-portfolio/static/js/main.87cb7f0d.js.map",
     "453.8a46587e.chunk.js.map": "/suzy-portfolio/static/js/453.8a46587e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03da80d4.css",
-    "static/js/main.f339b6e6.js"
+    "static/css/main.4fc66ba8.css",
+    "static/js/main.87cb7f0d.js"
   ]
 }
