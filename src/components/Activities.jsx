@@ -35,15 +35,6 @@ const activities = [
 
   {
     id: 4,
-    title: "English Language Competition 2018",
-    shortDesc:
-      "Competed at Technological Universities and Computer University.",
-    longDesc:
-      "In 2017, I participated in an English Language Competition where I tested my communication and presentation skills.",
-    images: ["/suzy-portfolio/images/english1.jpg"],
-  },
-  {
-    id: 5,
     title: "Ooredoo-UNDP Myanmar Hackathon 2019",
     shortDesc:
       "Awarded by the Women’s Empowerment sector as part of Team Divas.",
