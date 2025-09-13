@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #fff;
   color: #222;
+  font-size: 16px;
 }
 
 a {
@@ -32,4 +33,10 @@ a:hover {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.text-sm {
+  font-size: 14px;
+}
+.text-md {
+  font-size: 16px;
 }

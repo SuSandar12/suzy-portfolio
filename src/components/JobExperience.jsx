@@ -1,4 +1,6 @@
 import React from "react";
+import FadeInSection from "./FadeInSection";
+import { motion } from "framer-motion";
 
 const jobs = [
   {
@@ -33,12 +35,11 @@ const jobs = [
       "Ongoing Maintenance & Enhancements: Ensure ongoing maintenance, troubleshooting, and enhancements of the e-commerce website to improve user experience and operational efficiency.",
       "Code Deployment: Proficiently manage code deployments using Git Extension and BitBucket, ensuring version control and smooth integration within the development lifecycle.",
       "Cross-Functional Collaboration: Collaborate closely with cross-functional teams to gather business requirements and deliver solutions that align with company goals.",
+      "API Integrations: Integrated multiple external APIs for smoother data exchange.",
     ],
     projects: [
       "Shipment Creation System Integration with DHL API: Automated shipping using DHL API.",
-      "Parcel Shipping Order Entry System: Developed with C# and Razor.",
       "Export Sales Order Data System: Automated sales data export for reporting.",
-      "API Integrations: Integrated multiple external APIs for smoother data exchange.",
       "Sales Data Import System: Automated imports using Windows Forms and Console apps.",
       "Static Web Pages & JSON-Powered Webpage Project: Improved website interactivity using React.js.",
     ],
@@ -81,45 +82,68 @@ const jobs = [
 
 export default function JobExperience() {
   return (
-    
-    <section id="experiences" className="max-w-6xl mx-auto py-12 px-4">
-      <h2 className="text-center text-3xl font-bold mb-8 text-primary-pink">
-        Professional Experience
-      </h2>
-      <div className="relative border-l-4 border-primary-pink pl-8 space-y-12">
-        {jobs.map((job, idx) => (
-          <div key={idx} className="relative">
-            <div className="absolute -left-3 top-2 w-6 h-6 rounded-full bg-primary-pink"></div>
+    <FadeInSection>
+      <section id="experiences" className="max-w-6xl mx-auto py-12 px-4">
+        <h2 className="text-center text-3xl font-bold mb-8 text-primary-pink">
+          Professional Experience
+        </h2>
+        <div className="relative border-l-4 border-primary-pink pl-8 space-y-12">
+          {jobs.map((job, idx) => (
+            <motion.div
+              key={job.title}
+              className={`flex flex-col md:flex-row ${
+                idx % 2 === 1 ? "md:flex-row-reverse" : ""
+              } items-start gap-8`}
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: idx * 0.2 }}
+              viewport={{ once: false, amount: 0.2 }}
+            >
+              <div key={idx} className="relative">
+                <div className="absolute -left-3 top-2 w-6 h-6 rounded-full bg-primary-pink"></div>
 
-            <div className="bg-white shadow-md rounded-lg p-6">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
-                <h3 className="text-2xl font-semibold text-primary-pink">{job.title}</h3>
-                <span className="text-gray-500 text-sm font-bold">{job.period}</span>
-              </div>
-              <h4 className="text-gray-700 font-medium mb-3">
-                <a href={job.link} className="hover:text-primary-pink underline" target="_blank" rel="noopener noreferrer">
-                  {job.company}
-                </a>
-              </h4>
-              <ul className="list-disc pl-6 space-y-1 text-gray-600">
-                {job.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
-              {job.projects && (
-                <>
-                  <div className="mt-2 text-gray-300 font-semibold">Key Projects:</div>
-                  <ul className="list-disc pl-8 text-gray-200 space-y-1">
-                    {job.projects.map((p, i) => (
-                      <li key={i}>{p}</li>
+                <div className="bg-white shadow-md rounded-lg p-6">
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                    <h3 className="text-2xl font-semibold text-primary-pink">
+                      {job.title}
+                    </h3>
+                    <span className="text-gray-500 text-sm font-bold">
+                      {job.period}
+                    </span>
+                  </div>
+                  <h4 className="text-gray-700 font-medium mb-3">
+                    <a
+                      href={job.link}
+                      className="hover:text-primary-pink underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {job.company}
+                    </a>
+                  </h4>
+                  <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                    {job.bullets.map((b, i) => (
+                      <li key={i}>{b}</li>
                     ))}
                   </ul>
-                </>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+                  {job.projects && (
+                    <>
+                      <div className="mt-2 text-gray-300 font-semibold">
+                        Key Projects:
+                      </div>
+                      <ul className="list-disc pl-8 text-gray-200 space-y-1">
+                        {job.projects.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+    </FadeInSection>
   );
 }
